@@ -35,7 +35,7 @@ jobs:
         run: |
           poetry run pytest --cov --cov-report=xml:coverage.xml --cov-report=term-missing
 
-      - name: SonarQube Cloud Scan
-        uses: SonarSource/sonarqube-scan-action@v5
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v4
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
