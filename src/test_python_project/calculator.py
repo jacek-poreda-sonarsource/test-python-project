@@ -8,7 +8,7 @@ import json  # SonarQube: unused import (python:S1128)
 # SonarQube: cognitive complexity issue - deeply nested code (python:S3776)
 def calculate(operation, a, b, strict=False):
     test = 1
-    test3 = 3
+    test4 = 4
     if operation == "add":
         if strict:
             if isinstance(a, (int, float)):
