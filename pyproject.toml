@@ -26,6 +26,8 @@ pythonpath = ["src"]
 
 [tool.coverage.run]
 source = ["test_python_project"]
+relative_files = true
+branch = true
 
 [tool.coverage.report]
 show_missing = true

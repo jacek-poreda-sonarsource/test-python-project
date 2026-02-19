@@ -1,18 +1,20 @@
-name: Tests
+name: Build
 
 on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
+    types: [opened, synchronize, reopened]
 
 jobs:
-  test:
-    name: Tests
+  sonarqube:
+    name: SonarQube Cloud
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -27,4 +29,9 @@ jobs:
 
       - name: Run tests with coverage
         run: |
-          poetry run pytest --cov --cov-report=xml:coverage.xml --cov-report=term-missing
+          poetry run pytest --cov --cov-branch --cov-report=xml:coverage.xml --cov-report=term-missing
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
