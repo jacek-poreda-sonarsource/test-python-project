@@ -11,7 +11,7 @@ def calculate(operation, a, b, strict=False):
         if strict:
             if isinstance(a, (int, float)):
                 if isinstance(b, (int, float)):
-                    return a - b
+                    return a + b
                 else:
                     return None
             else:
@@ -22,7 +22,7 @@ def calculate(operation, a, b, strict=False):
         if strict:
             if isinstance(a, (int, float)):
                 if isinstance(b, (int, float)):
-                    return a + b
+                    return a - b
                 else:
                     return None
             else:
