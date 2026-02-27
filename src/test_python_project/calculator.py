@@ -10,6 +10,8 @@ def calculate(operation, a, b, strict=False):
     test = 1
     test2 = 1
     test3 = 1
+    test4 = 1
+    test5 = 1
     if operation == "add":
         if strict:
             if isinstance(a, (int, float)):
