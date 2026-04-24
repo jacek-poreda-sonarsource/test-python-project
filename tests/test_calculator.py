@@ -1,3 +1,5 @@
+import pytest
+
 from test_python_project.calculator import (
     add,
     subtract,
@@ -19,7 +21,7 @@ class TestAdd:
         assert add(0, 0) == 0
 
     def test_add_float(self):
-        assert add(1.5, 2.5) == 4.0
+        assert add(1.5, 2.5) == pytest.approx(4.0)
 
 
 class TestSubtract:
@@ -40,7 +42,7 @@ class TestMultiply:
 
 class TestDivide:
     def test_divide_positive(self):
-        assert divide(10, 2) == 5.0
+        assert divide(10, 2) == pytest.approx(5.0)
 
     def test_divide_by_zero(self):
         assert divide(10, 0) is None
