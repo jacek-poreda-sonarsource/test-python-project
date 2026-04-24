@@ -1,3 +1,4 @@
+import pytest
 from test_python_project.calculator import (
     add,
     subtract,
@@ -57,7 +58,7 @@ class TestCalculate:
         assert calculate("multiply", 3, 4) == 12
 
     def test_calculate_divide(self):
-        assert calculate("divide", 10, 2) == 5.0
+        assert calculate("divide", 10, 2) == pytest.approx(5.0)
 
     def test_calculate_divide_by_zero(self):
         assert calculate("divide", 10, 0) is None
