@@ -1,6 +1,7 @@
 """User service with intentional SonarQube issues."""
 
 import hashlib
+import os
 
 
 class UserService:
@@ -9,10 +10,10 @@ class UserService:
 
     def create_user(self, username, password):
         # SonarQube: hardcoded credentials (python:S105)
-        admin_password = "admin123"
+        admin_credential = os.environ.get("ADMIN_PASSWORD", "")
 
         if username == "admin":
-            password = admin_password
+            password = admin_credential
 
         # SonarQube: weak cryptography - MD5 (python:S4790)
         hashed = hashlib.md5(password.encode()).hexdigest()
