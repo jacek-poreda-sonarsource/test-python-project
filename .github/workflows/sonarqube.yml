@@ -40,5 +40,5 @@ jobs:
       - name: SonarQube Scan Dev16
         uses: SonarSource/sonarqube-scan-action@v5
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_DEV16 }}
-          SONAR_HOST_URL: https://dev16.sc-dev16.io/
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_DEV7 }}
+          SONAR_HOST_URL: https://dev7.sc-dev7.io/
