@@ -9,3 +9,4 @@ async def fetch_data_violation():
         # VIOLATION: We catch the cancellation to clean up, but swallow it!
         print("Task was cancelled! Cleaning up connection connections...")
         # Missing 'raise' here means the cancellation is cancelled!
+        raise
